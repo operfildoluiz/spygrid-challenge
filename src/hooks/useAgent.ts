@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import mapRandomUserToAgent from "../helpers/mapRandomUserToAgent";
 import { Agent } from "../types/agent";
 
 const useAgent = (): [() => Promise<Agent | null>, boolean] => {
@@ -9,10 +10,7 @@ const useAgent = (): [() => Promise<Agent | null>, boolean] => {
     try {
       const response = await fetch(`https://randomuser.me/api`);
       const data = await response.json();
-      const agent = {
-        id: data.results[0].id.value,
-        name: `${data.results[0].name.first} ${data.results[0].name.last}`,
-      };
+      const agent = mapRandomUserToAgent(data.results[0]);
       setIsLoading(false);
       return agent;
     } catch (error) {

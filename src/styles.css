@@ -29,3 +29,11 @@ body {
     background-position: left;
   }
 }
+
+.is-center {
+  @apply flex justify-center items-center;
+}
+
+.grayscale {
+  filter: grayscale(100%) brightness(150%);
+}
