@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import AgentInfo from "../components/AgentInfo";
+import Map from "../components/Map";
 import useAgent from "../hooks/useAgent";
 import { Agent } from "../types/agent";
 
@@ -19,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="container mx-auto min-h-screen box-border flex items-center justify-center font-major">
       <div
-        className="grid h-[90vh] w-full backdrop-blur-md grid-cols-6 gap-2"
+        className="grid h-full md:h-[90vh] w-full backdrop-blur-md grid-cols-6 gap-2"
         style={{
           border: `1px solid rgba(255, 255, 255, 0.55)`,
         }}
@@ -30,13 +31,15 @@ const HomePage: React.FC = () => {
           </div>
         ) : agent ? (
           <>
-            <div className="col-span-2 flex flex-col h-full w-full">
+            <div className="col-span-6 md:col-span-2 flex flex-col h-full w-full">
               <AgentInfo agent={agent} />
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded h-full" onClick={handleNextAsset}>
+              <button className="bg-black hover:bg-green-700 text-white font-bold py-2 px-4 rounded h-full" onClick={handleNextAsset}>
                 Next Asset
               </button>
             </div>
-            <div className="col-span-4"></div>
+            <div className="hidden md:flex col-span-4 h-full">
+              <Map address={agent.address} city={agent.city} />
+            </div>
           </>
         ) : (
           <div>No data to display</div>

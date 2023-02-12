@@ -1,3 +1,5 @@
+import { Coordinates } from "./coordinates";
+
 export interface Agent {
   firstName: string;
   lastName: string;
@@ -13,4 +15,6 @@ export interface Agent {
     description: string;
   };
   largePhoto: string;
+  coordinates: Coordinates;
+  address: string;
 }

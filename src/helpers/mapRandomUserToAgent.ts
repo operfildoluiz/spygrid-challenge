@@ -17,6 +17,11 @@ const mapRandomUserToAgent = (user: any): Agent => {
     },
     eyeColor: getRandomEyeColor(),
     largePhoto: user.picture.large,
+    coordinates: {
+      latitude: user.location.coordinates.latitude,
+      longitude: user.location.coordinates.longitude,
+    },
+    address: `${user.location.street.number} ${user.location.street.name}`,
   };
 };
 
