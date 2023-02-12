@@ -6,8 +6,8 @@
 
 Via CodeSandbox
 
-- Open this [link]() to navigate the project
-- Open this [link]() to see the codebase
+- Open this [link](https://0kx68y-3000.preview.csb.app/) to navigate the project
+- Open this [link](https://codesandbox.io/p/github/operfildoluiz/spygrid-challenge/main) to see the codebase
 
 Via local
 
