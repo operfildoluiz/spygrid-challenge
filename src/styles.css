@@ -1,4 +1,39 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url("https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress,enhance&cs=tinysrgb&w=2560&h=1440&dpr=1&fit=crop&px=25&bri=-25");
+  background-size: cover;
+  background-position: center;
+  background-color: #000;
+  animation: move 10s linear infinite;
+
+  overflow: hidden;
+
+  min-width: 100wh;
+  min-height: 100vh;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-position: left;
+  }
+}
+
+.is-center {
+  @apply flex justify-center items-center;
+}
+
+.grayscale {
+  filter: grayscale(100%) brightness(150%);
 }
