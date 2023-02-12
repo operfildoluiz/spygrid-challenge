@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="container mx-auto min-h-screen box-border flex items-center justify-center font-major">
       <div
-        className="grid h-full md:h-[90vh] w-full backdrop-blur-md grid-cols-6 gap-2"
+        className="grid h-full w-full backdrop-blur-md grid-cols-6 gap-2 max-h-screen"
         style={{
           border: `1px solid rgba(255, 255, 255, 0.55)`,
         }}
@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
             <div className="col-span-6 md:col-span-2 flex flex-col h-full w-full">
               <AgentInfo agent={agent} />
               <button className="bg-black hover:bg-green-700 text-white font-bold py-2 px-4 rounded h-full" onClick={handleNextAsset}>
-                Next Asset
+                {!isLoading ? `Next Asset` : `Loading...`}
               </button>
             </div>
             <div className="hidden md:flex col-span-4 h-full">

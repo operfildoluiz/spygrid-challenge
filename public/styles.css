@@ -676,6 +676,10 @@ video {
   height: 24px;
 }
 
+.max-h-screen {
+  max-height: 100vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -948,6 +952,10 @@ body {
 
   .md\:h-\[90vh\] {
     height: 90vh;
+  }
+
+  .md\:h-full {
+    height: 100%;
   }
 }
 
